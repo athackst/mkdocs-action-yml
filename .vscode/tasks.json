@@ -1,0 +1,42 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Generate golden files",
+            "type": "shell",
+            "command": "python3 tests/generate_golden.py"
+        },
+        {
+            "label": "Run tests",
+            "type": "shell",
+            "command": "python3 -m unittest discover -s tests -p test_*.py -v",
+            "group": {
+                "kind": "test",
+                "isDefault": true}
+        },
+        {
+            "label": "Run integration test",
+            "type":"shell",
+            "command": "mkdocs build -q --strict",
+            "options": {
+                "cwd": "${workspaceFolder}/tests/fixtures"
+            }
+        },
+        {
+            "label": "Serve integration test",
+            "type":"shell",
+            "command": "mkdocs serve -q --strict",
+            "options": {
+                "cwd": "${workspaceFolder}/tests/fixtures"
+            }
+        },
+        {
+            "label": "pip install",
+            "type": "shell",
+            "command": "pip install --user -r requirements.txt; pip install -e . ",
+            "problemMatcher": []
+          },
+    ]
+}

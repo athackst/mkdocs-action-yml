@@ -1,0 +1,29 @@
+<h1>Test Action</h1>
+<p>Test description</p>
+<p>This action is a docker action.</p>
+<h2>Inputs</h2>
+<p>| Input | Description | Default |
+| ----- | ----------- | ------- |
+| input1 | [required] Input 1 description | <code>|
+| input2 | [optional] Input 2 description | `default value` |
+| input3 | [required] Input 3 description |</code> |
+| input4 | [optional] Input 4 description | `` |</p>
+<h2>Outputs</h2>
+<p>| Output | Description |
+| ------ | ----------- |
+| output1 | Output 1 description |
+| output2 | Output 2 description |</p>
+<h2>Usage</h2>
+<p><code>yaml
+name: Example usage
+on: push
+jobs:
+  example_job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: athackst/action@v0.1.1
+         with:
+           input1: 
+           input2: default value # optional
+           input3: 
+           input4:  # optional</code></p>

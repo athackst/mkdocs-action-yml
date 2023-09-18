@@ -1,0 +1,30 @@
+name: Test Action
+author: Test Author
+description: Test description
+inputs:
+  input1:
+    description: Input 1 description
+    required: true
+    default: ''
+  input2:
+    description: Input 2 description
+    required: false
+    default: 'default value'
+  input3:
+    description: Input 3 description
+    required: true
+  input4:
+    description: Input 4 description
+    required: false
+outputs:
+  output1:
+    description: Output 1 description
+  output2:
+    description: Output 2 description
+    value: 'output value'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+branding:
+  icon: 'award'
+  color: 'green'

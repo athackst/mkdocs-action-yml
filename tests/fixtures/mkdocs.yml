@@ -1,0 +1,4 @@
+site_name: My Docs
+
+markdown_extensions:
+  - mkdocs-action-yml
